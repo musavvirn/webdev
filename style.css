@@ -1,0 +1,66 @@
+.navbar {
+  color: darkgrey;
+  width: 100%;
+  padding-left: 60%;
+}
+
+.navbar .btn {
+  float: right;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 0px 0px 5px 2px cyan;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 20px;
+  border: 1px solid darkgrey;
+
+}
+
+.card {
+
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+  outline-color: black;
+  /* outline-style: solid; */
+  border: 2px solid black;
+  border-radius:15px;
+
+
+}
+.card-body {
+  background-color: lightgreen;
+  border-radius: inherit;
+  width: 100%;
+}
+
+.card-img-top {
+  width: 80px;
+  height: auto;
+  opacity: 50%;
+  border-radius: inherit;
+}
+
+.card-body p {
+  font-size: 12px;
+  text-align: right;
+  height: 25px;
+}
+
+.card-body h5 {
+  font-size: 14px;
+}
+
+.card-body a {
+  font-size: 12px;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 5px 3px black;
+  height: 300px;
+}
+
+/* .card .card-img-top:hover {
+  box-shadow: 0px 0px 5px 3px black;
+  width: 100px;
+} */
