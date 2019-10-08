@@ -20,7 +20,7 @@
   </div>
 
   <div class="header-top">
-    <h4> Book List </h4>
+    <h4 class="header-title"> Book List </h4><input type="search" id="book-search" class="book-search" placeholder="search by name">
   </div>
   <div class="card">
     <p class="card-label"> Book Name </p>
@@ -32,18 +32,22 @@
     <button type="submit" class="btn btn-primary btn-dark" id="submit-button"> Submit Book </button>
   </div>
   <div class="list-display">
-    <table class="table table-striped mt-5">
+    <table id="book-table" class="table table-striped mt-5">
       <thead>
         <tr>
-          <th> Title </th>
-          <th> Type </th>
-          <th> ISBN </th>
+          <th id="x1"> Title <a href=# class="column-hide"> &#x2B06; </a></th>
+          <th id="x2"> Type <a href=# class="column-hide"> &#x2B06; </a></th>
+          <th id="x3"> ISBN <a href=# class="column-hide"> &#x2B06; </a></th>
+          <th id="x4"> Date Added <a href=# class="column-hide"> &#x2B06; </a></th>
         </tr>
       </thead>
       <tbody id="book-list"></tbody>
     </table>
 
 
+  </div>
+  <div id="card-desc" class="card desc">
+    <p class="desc-text"> Info: </p>
   </div>
 
   <button type="submit" class="btn btn-primary btn-dark" id="x"> ABC </button>

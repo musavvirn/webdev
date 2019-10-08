@@ -1,0 +1,72 @@
+body {
+  background-color: lightgrey;
+}
+
+input {
+outline: 1px solid black;
+}
+/*
+#x1 {
+  display: none;
+} */
+.header-top {
+
+}
+
+.book-search {
+  font-style: italic;
+  margin-left: 300px;
+  display: inline-block;
+  border-radius: 10px;
+  border-color: lightgrey;
+  outline: 0px;
+
+}
+
+
+.header-title {
+  margin-right: 50px;
+  display: inline-block;
+
+}
+
+.desc {
+  color: gold;
+  display: block;
+  background-color: black;
+  border-radius: 10px;
+  font-size: 12px;
+  width: 200px;
+  height: 40px;
+  padding: 5px 5px 5px 5px;
+  border: 1px solid white;
+}
+
+#x1 {
+
+  width: 300px;
+  display: inline-block;
+  word-wrap: break-word;
+}
+
+#x2 {
+  width: 150px;
+  display: inline-block;
+  word-wrap: break-word;
+}
+
+#x3 {
+  width: 150px;
+  display: inline-block;
+  word-wrap: break-word;
+}
+
+#x4 {
+  width: 150px;
+  display: inline-block;
+  word-wrap: break-word;
+}
+
+tr {
+  outline: 1px solid white;
+}
