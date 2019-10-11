@@ -37,7 +37,7 @@ class UI {
     const list = document.getElementById("book-list");
     const row = document.createElement("tr");
 
-    row.innerHTML = `<td id="x1"> ${book.title} </td><td id="x2"> ${book.author} </td><td id="x3"> ${book.isbn} </td><td id="x4"> ${book.dateAdded} </td><td id="x5"><a href="#" class="btn btn-danger btn-sm btn-delete">X</a></td>` ;
+    row.innerHTML = `<td id="x1" class="c1"> ${book.title} </td><td id="x2" class="c2"> ${book.author} </td><td id="x3" class="c3"> ${book.isbn} </td><td id="x4" class="c4"> ${book.dateAdded} </td><td id="x5" class="c5"><a href="#" class="btn btn-danger btn-sm btn-delete">X</a></td>` ;
     list.appendChild(row);
   }
 
@@ -56,7 +56,7 @@ class UI {
 
         var col = rowListChildren[j];
         if (!matched && col.innerHTML.toUpperCase().search(searchText.toUpperCase()) >= 0) {
-          console.log(col.innerHTML.toUpperCase());
+          // console.log(col.innerHTML.toUpperCase());
           col.parentElement.style.display = "";
           break;
         } else {
@@ -80,13 +80,13 @@ class UI {
   static hideColumn(column) {
     var columnId = column.parentElement.id;
     var rowList = document.getElementById("book-list").children;
-    document.getElementById("x").innerHTML = rowList.length;
 
+
+    // document.getElementsByClassName(columnClass).children.style.width = "100px";
     for (var i = 0; i < rowList.length; i++) {
       rowList[i].children[columnId.charAt(1)-1].innerHTML = "";
       // rowList[i].children[columnId-1].style.color = "red";
     }
-
     column.innerHTML = "&#x2B07;";
   }
 }
@@ -118,13 +118,8 @@ window.onload = function() {
 }
 
 function filterNames() {
-  // console.log("1");
-  var searchText = document.getElementById("book-search").value;
-  if (searchText.replace("/\s/g", "").length) {
-    UI.displaySearchBooks(searchText);
-  } else {
-    UI.displaySearchBooks("");
-  }
+  var searchText = document.getElementById("book-search").value.trim();
+  UI.displaySearchBooks(searchText);
 }
 
 function test() {
