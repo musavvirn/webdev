@@ -1,4 +1,100 @@
 //Book Class: Make new books
+window.onload = function() {
+  var btnSubmit = document.getElementById("submit-button");
+  btnSubmit.onclick = submitButton;
+
+  var tableRow = document.getElementsByTagName("tr");
+  for (var i = 0; i < tableRow.length; i++) {
+    tableRow[i].onmouseover = hoverName;
+    tableRow[i].onmouseout = hoverNameDisable;
+  }
+
+  var filterInput = document.getElementById("book-search");
+  filterInput.addEventListener("keyup", filterNames);
+
+  addDeleteAction();
+  addColumHideAction();
+
+  document.getElementById("test1").addEventListener("click", loadTest1);
+  document.getElementById("test2").addEventListener("click", loadTest2);
+  document.getElementById("test3").addEventListener("click", loadTest3);
+
+}
+
+function loadTest3() {
+  var url = "matlist.xlsx"
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", url, true);
+  xhr.responseType = "arraybuffer";
+
+  xhr.onerror = function() {
+    console.log("Error");
+  }
+  xhr.send();
+}
+
+function loadTest2() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://api.github.com/users", true);
+
+  xhr.onload = function() {
+    if (this.status == 200) {
+      var user = JSON.parse(this.responseText);
+      console.log(user[0].project);
+
+      var userinfo = "";
+      for (var i in user) {
+        userinfo += "<ul class='user-ul'>" + "<li>" + user[i].login + "</li>" +
+                "<li>ID: " + user[i].url + "</li>" +
+                "<li>Proj: " + user[i].followers_url + "</li>" +
+                " " + "<img class='user-avatar' src=" + user[i].avatar_url + "</img>" +
+                "</ul>";
+    }
+    document.getElementById("response-box").innerHTML = userinfo;
+  }
+  }
+  xhr.onerror = function() {
+    console.log("Error");
+  }
+  xhr.send();
+}
+
+
+function loadTest1() {
+  // console.log("yes");
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "user.json", true);
+  // xhr.setRequestHeader("Content-type", "text/plain");
+  xhr.onload = function() {
+    //200 ok
+    // 403 forbidden
+    //404 not found
+    if(this.status == 200) {
+      // var user = JSON.parse(this.responseText);
+      // console.log(user.name);
+
+      var user = JSON.parse(this.responseText);
+      console.log(user[0].project);
+
+      var userinfo = "";
+
+      for (var i in user){
+        userinfo += "<ul>" + "<li>" + user[i].name + "</li>" +
+                "<li>ID: " + user[i].id + "</li>" +
+                "<li>Proj: " + user[i].project + "</li>" +
+                "</ul>";
+      }
+
+
+      document.getElementById("response-box").innerHTML = userinfo;
+    }
+  }
+
+  xhr.onerror = function() {
+    console.log("Error");
+  }
+  xhr.send();
+}
 
 class book {
   constructor(title, author, isbn, dateAdded) {
@@ -96,26 +192,6 @@ class UI {
 document.addEventListener("DOMContentLoaded", UI.displayBooks);
 
 // Event: add a book
-
-window.onload = function() {
-  var btnSubmit = document.getElementById("submit-button");
-  btnSubmit.onclick = submitButton;
-
-  var tableRow = document.getElementsByTagName("tr");
-  for (var i = 0; i < tableRow.length; i++) {
-    tableRow[i].onmouseover = hoverName;
-    tableRow[i].onmouseout = hoverNameDisable;
-  }
-
-  var filterInput = document.getElementById("book-search");
-  filterInput.addEventListener("keyup", filterNames);
-
-  addDeleteAction();
-  addColumHideAction();
-
-  // var xbtn = document.getElementById("x");
-  // x.onclick = test();
-}
 
 function filterNames() {
   var searchText = document.getElementById("book-search").value.trim();

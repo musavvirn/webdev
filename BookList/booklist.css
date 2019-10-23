@@ -10,7 +10,6 @@ outline: 1px solid black;
   display: none;
 } */
 .header-top {
-
 }
 
 .book-search {
@@ -20,14 +19,12 @@ outline: 1px solid black;
   border-radius: 10px;
   border-color: lightgrey;
   outline: 0px;
-
 }
 
 
 .header-title {
   margin-right: 50px;
   display: inline-block;
-
 }
 
 .desc {
@@ -40,6 +37,29 @@ outline: 1px solid black;
   height: 40px;
   padding: 5px 5px 5px 5px;
   border: 1px solid white;
+}
+
+.response-box {
+  border: 1px solid blue;
+  margin: 10px;
+  padding: 5px;
+  min-width: 200px;
+  min-height: 100px;
+}
+
+.user-avatar {
+  max-width: 50px;
+  max-height: 50px;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+.user-ul {
+  color: white;
+  max-width: 500px;
+  list-style: none;
+  display: block;
+  background-color: black;
 }
 
 #x1 {
